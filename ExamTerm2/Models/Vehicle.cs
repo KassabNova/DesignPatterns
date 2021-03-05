@@ -15,13 +15,16 @@ namespace ExamTerm2
         public string vehicleName { get; set; }
         public DateTime metricTime { get; set; }
         public int vehicleHealth { get; set;  }
-        private  IVehicleStrategy mStrategy;
+        public double[] vehiclePos { get; set;  }
+
+        private  IVehicleStrategy mStrategy = new  Walk();
 
         public Vehicle(VehicleType type, string name, int health)
         {
             vehicleType = type;
             vehicleName = name;
             vehicleHealth = health;
+            vehiclePos = new double[2]{0,0};
         }
 
         public Vehicle()
@@ -33,9 +36,10 @@ namespace ExamTerm2
             mStrategy = strat;
         }
 
-        public void Move(Vehicle vehicle)
+        public void Move(Vehicle vehicle, double[] newPos)
         {
-            mStrategy.Move(vehicle);
+            mStrategy.Move(vehicle,newPos);
+            this.vehiclePos = newPos;
         }
     }
 

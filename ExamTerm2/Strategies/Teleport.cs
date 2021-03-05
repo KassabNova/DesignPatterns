@@ -8,9 +8,9 @@ namespace ExamTerm2
 {
     class Teleport : IVehicleStrategy 
     {
-        public void Move(Vehicle metrics)
+        public void Move(Vehicle vehicle, double[] pos)
         {
-            Console.WriteLine("Sorting using memory! Using: {0}K of disk swap memory", new Random().Next(1000, 42069));
+            Console.WriteLine($"Im teleporting from {vehicle.vehiclePos[0]},{vehicle.vehiclePos[1]} to {pos[0]},{pos[1]}", new Random().Next(1000,42069));
         }
     }
 }

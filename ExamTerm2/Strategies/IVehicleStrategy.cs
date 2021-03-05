@@ -8,6 +8,6 @@ namespace ExamTerm2
 {
     interface IVehicleStrategy
     {
-        void Move(Vehicle v);
+        void Move(Vehicle v, double[] pos);
     }
 }

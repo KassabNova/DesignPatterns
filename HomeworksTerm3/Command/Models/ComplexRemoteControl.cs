@@ -1,23 +1,19 @@
-
+using System;
+using System.Collections.Generic;
 namespace Command
 {
-    public class SimpleRemoteControl
+    public class ComplexRemoteControl
     {
-        Command onslot, offslot;
-        public SimpleRemoteControl() { }
-        public void setCommand(Command oncommand, Command offcommand)
+        public Dictionary<string, Command> commands = new Dictionary<string, Command>();
+        public ComplexRemoteControl() { }
+        public void setCommand(String commandName, Command command)
         {
-            onslot = oncommand;
-            offslot = offcommand;
-
+            commands.Add(commandName, command);
         }
-        public void onButtonWasPressed()
+        public void ButtonPress(string commandName)
         {
-            onslot.execute();
-        }
-        public void offButtonWasPressed()
-        {
-            offslot.execute();
+            Command button = commands[commandName];
+            button.execute();
         }
     }
 

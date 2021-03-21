@@ -3,7 +3,7 @@ namespace Command
 {
     public class SimpleRemoteControl
     {
-        Command onslot, offslot, button;
+        Command onslot, offslot;
         public SimpleRemoteControl() { }
         public void setCommand(Command oncommand, Command offcommand)
         {
@@ -19,11 +19,7 @@ namespace Command
         {
             offslot.execute();
         }
-        public void ButtonPress(Command command)
-        {
-            button = command;
-            button.execute();
-        }
+
     }
 
 }

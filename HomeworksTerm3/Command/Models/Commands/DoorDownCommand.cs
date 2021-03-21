@@ -1,10 +1,10 @@
 
 namespace Command
 {
-    public class LightOffCommand : Command
+    public class DoorDownCommand : Command
     {
-        Light light;
-        public LightOffCommand(Light light)
+        GarageDoor light;
+        public DoorDownCommand(GarageDoor light)
         {
             this.light = light;
         }

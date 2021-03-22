@@ -6,7 +6,7 @@ namespace Command
     {
         public Dictionary<string, Command> commands = new Dictionary<string, Command>();
         public ComplexRemoteControl() { }
-        public void setCommand(String commandName, Command command)
+        public void addCommand(String commandName, Command command)
         {
             commands.Add(commandName, command);
         }

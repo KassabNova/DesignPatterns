@@ -9,7 +9,6 @@ namespace Command
             Console.WriteLine("Hello World!");
 
             SimpleRemoteControl remote = new SimpleRemoteControl();
-            ComplexRemoteControl remote2 = new ComplexRemoteControl();
             Light light = new Light("Bathroom");
             Light light2 = new Light("Kitchen");
             LightOnCommand lightOn = new LightOnCommand(light);
@@ -25,7 +24,23 @@ namespace Command
             remote.offButtonWasPressed();
             remote.setCommand(lightOn, lightOff);
             remote.offButtonWasPressed();
-            
+
+            ComplexRemoteControl complexRemote = new ComplexRemoteControl();
+
+            GarageDoor door = new GarageDoor();
+            DoorUpCommand openDoor = new DoorUpCommand(door);
+            DoorDownCommand closeDoor = new DoorDownCommand(door);
+            DoorStopCommand stopDoor = new DoorStopCommand(door);
+
+            complexRemote.addCommand("Open", openDoor);
+            complexRemote.addCommand("Close", closeDoor);
+            complexRemote.addCommand("Stop", stopDoor);
+
+            complexRemote.ButtonPress("Open");
+            complexRemote.ButtonPress("Close");
+            complexRemote.ButtonPress("Open");
+            complexRemote.ButtonPress("Stop");
+
         } 
     }
 }

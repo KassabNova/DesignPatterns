@@ -10,7 +10,7 @@ namespace Command
         }
         public void execute()
         {
-            light.off();
+            light.stop();
         }
     }
 }

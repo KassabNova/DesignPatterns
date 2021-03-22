@@ -3,14 +3,14 @@ namespace Command
 {
     public class DoorStopCommand : Command
     {
-        GarageDoor light;
-        public DoorStopCommand(GarageDoor light)
+        GarageDoor door;
+        public DoorStopCommand(GarageDoor door)
         {
-            this.light = light;
+            this.door = door;
         }
         public void execute()
         {
-            light.stop();
+            door.stop();
         }
     }
 }

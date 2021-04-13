@@ -6,7 +6,7 @@ namespace ProjectTerm3
     {
         string GetName();
 
-        string GetState();
+        State GetState();
 
         DateTime GetDate();
     }

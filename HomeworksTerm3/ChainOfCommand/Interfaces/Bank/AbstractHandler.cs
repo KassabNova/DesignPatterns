@@ -28,5 +28,16 @@ namespace ChainOfCommandBank
                 return null;
             }
         }
+        public virtual object Handle(object withdrawal, object account)
+        {
+            if (this._nextHandler != null)
+            {
+                return this._nextHandler.Handle(withdrawal);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

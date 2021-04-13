@@ -7,12 +7,11 @@ namespace ProjectTerm3
     {
         // For the sake of simplicity, the originator's state is stored inside a
         // single variable.
-        private State _state;
+        public State _state;
 
         public Originator(State state)
         {
-            this._state = state;
-            Console.WriteLine("Originator: My initial state is: " + state);
+            _state = state;
         }
 
         // The Originator's business logic may affect its internal state.
@@ -21,7 +20,7 @@ namespace ProjectTerm3
         public void DoSomething()
         {
             Console.WriteLine("Originator: I'm doing something important.");
-            this._state.stringVal = GenerateRandomString(30);
+            _state.stringVal = GenerateRandomString(30);
             Console.WriteLine($"Originator: and my state has changed to: {_state}");
         }
 
@@ -43,7 +42,7 @@ namespace ProjectTerm3
         // Saves the current state inside a memento.
         public IMemento Save()
         {
-            return new ConcreteMemento(this._state.stringVal);
+            return new ConcreteMemento(_state);
         }
 
         // Restores the Originator's state from a memento object.
@@ -53,9 +52,9 @@ namespace ProjectTerm3
             {
                 throw new Exception("Unknown memento class " + memento.ToString());
             }
-
-            this._state.stringVal = memento.GetState();
-            Console.Write($"Originator: My state has changed to: {_state}");
+            double prevBalance = _state.money;
+            _state = memento.GetState();
+            Console.WriteLine($"Bank account balance was {prevBalance}. It has changed to: {_state.money}");
         }
     }
 }

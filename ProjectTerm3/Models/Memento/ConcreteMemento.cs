@@ -3,32 +3,32 @@ namespace ProjectTerm3
 {
     class ConcreteMemento : IMemento
     {
-        private string _state;
+        private State _state;
 
         private DateTime _date;
 
-        public ConcreteMemento(string state)
+        public ConcreteMemento(State state)
         {
-            this._state = state;
-            this._date = DateTime.Now;
+            _state = new State(state);
+            _date = DateTime.Now;
         }
 
         // The Originator uses this method when restoring its state.
-        public string GetState()
+        public State GetState()
         {
-            return this._state;
+            return _state;
         }
 
         // The rest of the methods are used by the Caretaker to display
         // metadata.
         public string GetName()
         {
-            return $"{this._date} / ({this._state.Substring(0, 9)})...";
+            return $"{_date} ";
         }
 
         public DateTime GetDate()
         {
-            return this._date;
+            return _date;
         }
     }
 }

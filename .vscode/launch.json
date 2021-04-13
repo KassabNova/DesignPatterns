@@ -8,9 +8,9 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/HomeworksTerm3/Command/bin/Debug/net5.0/Command.dll",
+            "program": "${workspaceFolder}/ProjectTerm3/bin/Debug/net5.0/ProjectTerm3.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/HomeworksTerm3/Command",
+            "cwd": "${workspaceFolder}/ProjectTerm3/",
             "stopAtEntry": false,
             "console": "internalConsole"
         },

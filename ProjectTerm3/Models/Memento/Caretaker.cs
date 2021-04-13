@@ -13,30 +13,30 @@ namespace ProjectTerm3
 
         public Caretaker(Originator originator)
         {
-            this._originator = originator;
+            _originator = originator;
         }
 
         public void Backup()
         {
-            Console.WriteLine("\nCaretaker: Saving Originator's state...");
-            this._mementos.Add(this._originator.Save());
+            Console.WriteLine($"\nCaretaker: Saving {_originator._state.accountName}'s state...");
+            _mementos.Add(_originator.Save());
         }
 
         public void Undo()
         {
-            if (this._mementos.Count == 0)
+            if (_mementos.Count == 0)
             {
                 return;
             }
 
-            var memento = this._mementos.Last();
-            this._mementos.Remove(memento);
+            var memento = _mementos.Last();
+            _mementos.Remove(memento);
 
             Console.WriteLine("Caretaker: Restoring state to: " + memento.GetName());
 
             try
             {
-                this._originator.Restore(memento);
+                _originator.Restore(memento);
             }
             catch (Exception)
             {

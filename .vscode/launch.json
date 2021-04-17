@@ -8,9 +8,9 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/ProjectTerm3/bin/Debug/net5.0/ProjectTerm3.dll",
+            "program": "${workspaceFolder}/ExamTerm3/bin/Debug/net5.0/ExamTerm3.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ProjectTerm3/",
+            "cwd": "${workspaceFolder}/ExamTerm3/",
             "stopAtEntry": false,
             "console": "internalConsole"
         },
